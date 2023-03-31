@@ -20,12 +20,12 @@ function HostVanDetail() {
     if(!vans) return <h1>Loading...</h1>
 
     return (
-        <section>
+        <section className="van-detail-container">
             <Link
                 to=".."
                 relative="path"
                 className="back-button"
-            >
+            >&larr;
                 <span>Back to all vans</span>
             </Link>
 
