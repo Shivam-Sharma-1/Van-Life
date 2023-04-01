@@ -274,6 +274,7 @@ footer {
 .van-detail img {
     border-radius: 5px;
     margin-bottom: 1.5em;
+    margin-top: 1em;
 }
 
 .van-detail h2 {
