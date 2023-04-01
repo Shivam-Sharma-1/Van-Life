@@ -1,30 +1,16 @@
 import { useEffect, useState } from "react"
-import { Link, useSearchParams } from "react-router-dom"
+import { Link, useLoaderData, useSearchParams } from "react-router-dom"
 import getVans from "../../api"
 
+function loader() {
+    return getVans()
+}
+
 function Vans() {
-    const [vans, setVans] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
     const [searchParams, setSearchParams] = useSearchParams()
     const typeFilter = searchParams.get('type')
-
-    useEffect(() => {
-        async function loadVans() {
-            setIsLoading(true)
-            try {
-                const data = await getVans()
-                setVans(data)
-            }
-            catch(err) {
-                setError(err)
-            }
-            finally {
-                setIsLoading(false)
-            }
-        }
-        loadVans()
-    }, [])
+    const vans = useLoaderData()
 
     const displayedVans = typeFilter ? vans.filter(van => van.type.toLowerCase() === typeFilter) : vans
 
@@ -54,7 +40,11 @@ function Vans() {
             return prevParams
         })
     }
-    
+
+    if(error) {
+        return <h1>There was an error: {error.message}</h1>
+    }
+
     return (
         <div className="van-list-container">
             <h1>Explore our van options</h1>
@@ -85,13 +75,12 @@ function Vans() {
                     Clear filter
                 </button>) : null}
             </div>
-           { isLoading ? <h1>Loading...</h1>
-            : 
-            (<div className="van-list">
+            <div className="van-list">
                 {vanElements}
-            </div>)}
+            </div>
         </div>
     )
 }
 
 export default Vans
+export { loader }

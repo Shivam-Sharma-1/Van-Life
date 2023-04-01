@@ -14,7 +14,7 @@ import HostVans from './pages/Host/HostVans'
 import Income from './pages/Host/Income'
 import Reviews from './pages/Host/Reviews'
 import VanDetail from './pages/Vans/VanDetail'
-import Vans from './pages/Vans/Vans'
+import Vans, { loader as vansLoader } from './pages/Vans/Vans'
 import './server'
 import NotFound from './pages/NotFound'
 
@@ -23,7 +23,7 @@ function App() {
         <Route path='/' element={<Layout/>}>
             <Route index element={<Home/>}/>
             <Route path='about' element={<About/>}/>
-            <Route path='vans' element={<Vans/>}/>
+            <Route path='vans' element={<Vans/>} loader={vansLoader}/>
             <Route path='vans/:id' element={<VanDetail/>}/>
             <Route path='host' element={<HostLayout/>}>
                 <Route index element={<Dashboard/>}/>
