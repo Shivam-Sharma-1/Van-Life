@@ -17,13 +17,19 @@ import VanDetail from './pages/Vans/VanDetail'
 import Vans, { loader as vansLoader } from './pages/Vans/Vans'
 import './server'
 import NotFound from './pages/NotFound'
+import Error from './components/Error'
 
 function App() {
     const router = createBrowserRouter(createRoutesFromElements(
         <Route path='/' element={<Layout/>}>
             <Route index element={<Home/>}/>
             <Route path='about' element={<About/>}/>
-            <Route path='vans' element={<Vans/>} loader={vansLoader}/>
+            <Route 
+                path='vans' 
+                element={<Vans/>} 
+                loader={vansLoader}
+                errorElement={<Error/>}
+            />
             <Route path='vans/:id' element={<VanDetail/>}/>
             <Route path='host' element={<HostLayout/>}>
                 <Route index element={<Dashboard/>}/>
