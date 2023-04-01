@@ -13,6 +13,7 @@ function VanDetail() {
     }, [params.id])
     
     const search = location.state.search ? location.state.search : ''
+    const type = location.state.type ? location.state.type : "all"
 
     return (
         <div className="van-detail-container">
@@ -21,7 +22,7 @@ function VanDetail() {
                 relative="path"
                 className="back-button"
             >&larr;
-                <span>Back to all vans</span>
+                <span>Back to {type} vans</span>
             </Link>
             {van ? (
                 <div className="van-detail">
