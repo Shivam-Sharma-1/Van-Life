@@ -449,3 +449,19 @@ footer {
 .van-list-filter-buttons {
     margin-top: 1em;
 }
+
+.not-found-container {
+    padding-inline: 26px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.not-found-container .link-button {
+    width: 100%;
+    background-color: #161616;
+    color: white;
+}

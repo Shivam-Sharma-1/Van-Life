@@ -17,6 +17,7 @@ import Reviews from './pages/Host/Reviews'
 import VanDetail from './pages/Vans/VanDetail'
 import Vans from './pages/Vans/Vans'
 import './server'
+import NotFound from './pages/NotFound'
 
 function App() {
    return (
@@ -38,6 +39,7 @@ function App() {
                             <Route path='photos' element={<HostVanPhotos/>}/>                           
                         </Route>
                     </Route>
+                    <Route path='*' element={<NotFound/>}/>
                 </Route>
             </Routes>
         </Fragment>
