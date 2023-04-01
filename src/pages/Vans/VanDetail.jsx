@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link, useLocation, useParams } from "react-router-dom"
 
 function VanDetail() {
     const params = useParams()
+    const location = useLocation()
     const [van, setVan] = useState(null)
     
     useEffect(() => {
@@ -10,11 +11,13 @@ function VanDetail() {
             .then(res => res.json())
             .then(data => setVan(data.vans))
     }, [params.id])
+    
+    const search = location.state.search ? location.state.search : ''
 
     return (
         <div className="van-detail-container">
             <Link
-                to=".."
+                to={`..${search}`}
                 relative="path"
                 className="back-button"
             >&larr;
