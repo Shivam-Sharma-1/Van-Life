@@ -4,13 +4,16 @@ import getVans from "../../api"
 
 function Vans() {
     const [vans, setVans] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
     const [searchParams, setSearchParams] = useSearchParams()
     const typeFilter = searchParams.get('type')
 
     useEffect(() => {
         async function loadVans() {
+            setIsLoading(true)
             const data = await getVans()
             setVans(data)
+            setIsLoading(false)
         }
         loadVans()
     }, [])
@@ -43,7 +46,7 @@ function Vans() {
             return prevParams
         })
     }
-
+    
     return (
         <div className="van-list-container">
             <h1>Explore our van options</h1>
@@ -74,9 +77,11 @@ function Vans() {
                     Clear filter
                 </button>) : null}
             </div>
-            <div className="van-list">
+           { isLoading ? <h1>Loading...</h1>
+            : 
+            (<div className="van-list">
                 {vanElements}
-            </div>
+            </div>)}
         </div>
     )
 }
