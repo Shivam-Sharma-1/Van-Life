@@ -14,8 +14,6 @@ function HostVanDetail() {
     
     const vans = useLoaderData()
 
-    if(!vans) return <h1>Loading...</h1>
-
     return (
         <section className="van-detail-container">
             <Link

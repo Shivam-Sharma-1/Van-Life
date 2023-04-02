@@ -30,16 +30,9 @@ function HostVans() {
         <section className="host-vans">
             <h1 className="host-vans-title">Your listed vans</h1>
             <div className="host-vans-list">
-                {
-                    vans.length > 0 ? (
-                        <section>
-                            {hostVansEle}
-                        </section>
-
-                    ) : (
-                            <h2>Loading...</h2>
-                        )
-                }
+                <section>
+                    {hostVansEle}
+                </section>
             </div>
         </section>
     )
