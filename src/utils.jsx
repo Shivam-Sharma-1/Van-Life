@@ -6,6 +6,7 @@ async function requiredAuth() {
     if(!isLoggedIn) {
         throw redirect('/login')
     }
+    return null
 }
 
-export default requiredAuth
+export {requiredAuth}

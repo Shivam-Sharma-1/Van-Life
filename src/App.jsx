@@ -19,7 +19,7 @@ import './server'
 import NotFound from './pages/NotFound'
 import Error from './components/Error'
 import Login from './pages/Login'
-import requiredAuth from './utils'
+import {requiredAuth} from './utils'
 
 function App() {
     const router = createBrowserRouter(createRoutesFromElements(
@@ -40,9 +40,7 @@ function App() {
             loader={async () => await requiredAuth()}
             >
                 <Route index element={<Dashboard/>}
-                loader={async () => {
-                    return null
-                }}
+                loader={async () => await requiredAuth()}
                 />
                 <Route path='income' element={<Income/>}
                 loader={async () => await requiredAuth()}
