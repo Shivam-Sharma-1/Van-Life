@@ -3,7 +3,7 @@ import { useState } from "react"
 function Login() {
     const [loginFormData, setLoginFormatData] = useState({email: '', password:''})
 
-    function handleSubmit() {
+    function handleSubmit(e) {
         e.preventDefault()
         console.log(loginFormData);
     }
