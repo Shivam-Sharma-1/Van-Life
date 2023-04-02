@@ -30,8 +30,8 @@ function Navbar() {
                     style={({isActive}) => isActive ? activeStyles : null}
                     >Vans
                 </NavLink>
-                <Link to='login'>
-                    <img src={avatar} alt="" />
+                <Link to='login' className="login-link">
+                    <img src={avatar} className="login-icon" />
                 </Link>
             </nav>
         </header>
