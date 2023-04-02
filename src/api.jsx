@@ -26,4 +26,4 @@ async function getHostVans(id) {
     return data.vans
 }
 
-export default getVans
+export { getVans, getHostVans }

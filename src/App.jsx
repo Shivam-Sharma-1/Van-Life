@@ -13,7 +13,7 @@ import HostVanPricing from './pages/Host/HostVanPricing'
 import HostVans from './pages/Host/HostVans'
 import Income from './pages/Host/Income'
 import Reviews from './pages/Host/Reviews'
-import VanDetail from './pages/Vans/VanDetail'
+import VanDetail, { loader as vanDetailLoader } from './pages/Vans/VanDetail'
 import Vans, { loader as vansLoader } from './pages/Vans/Vans'
 import './server'
 import NotFound from './pages/NotFound'
@@ -33,9 +33,7 @@ function App() {
                 errorElement={<Error/>}
             />
             <Route path='vans/:id' element={<VanDetail/>}
-            loader={async () => {
-                return null
-            }}
+            loader={vanDetailLoader}
             />
             <Route path='host' element={<HostLayout/>}
             loader={async () => {
