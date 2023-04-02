@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom"
+import avatar from "../assets/images/avatar.png"
 
 function Navbar() {
     const activeStyles = {
@@ -17,15 +18,21 @@ function Navbar() {
                     to="/host"
                     style={({isActive}) => isActive ? activeStyles : null}
                     // className={({isActive}) => isActive ? "active-link" : null}
-                    >Host</NavLink>
+                    >Host
+                </NavLink>
                 <NavLink 
                     to="/about"
                     style={({isActive}) => isActive ? activeStyles : null}
-                    >About</NavLink>
+                    >About
+                </NavLink>
                 <NavLink 
                     to='/vans'
                     style={({isActive}) => isActive ? activeStyles : null}
-                >Vans</NavLink>
+                    >Vans
+                </NavLink>
+                <Link to='login'>
+                    <img src={avatar} alt="" />
+                </Link>
             </nav>
         </header>
     )
