@@ -523,6 +523,11 @@ footer {
     box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.05);
 }
 
+.login-form > button:disabled {
+    background-color: #aaaaaa;
+    cursor: not-allowed;
+}
+
 .red {
     color: #cc0000;
     margin-top: 1em;

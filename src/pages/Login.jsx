@@ -1,5 +1,4 @@
-import { useState } from "react"
-import { Form, redirect, useActionData, useLoaderData, useNavigate } from "react-router-dom"
+import { Form, redirect, useActionData, useLoaderData, useNavigation } from "react-router-dom"
 import { loginUser } from "../api"
 
 function loader({ request }) {
@@ -21,27 +20,17 @@ async function action({ request }) {
 }
 
 function Login() {
-    const [status, setStatus] = useState('idle')
     const message = useLoaderData()
-    const navigate = useNavigate()
     const errorMessage = useActionData()
-
-    function handleSubmit(e) {
-        e.preventDefault()
-        setStatus('submitting')
-        setError(null)
-        loginUser(loginFormData)
-            .then(data => {
-                navigate('/host', { replace: true} )
-            })
-            .finally(() => setStatus('idle'))
-    }
+    const navigation = useNavigation()
+    console.log(navigation);
 
     return (
         <div className="login-container">
             <h1>Sign in to your account</h1>
             {message && <h3 className="red">{message}</h3>}
             {errorMessage && <h3 className="red">{errorMessage}</h3>}
+
             <Form 
                 method='post' 
                 className="login-form"
@@ -58,9 +47,9 @@ function Login() {
                     placeholder="Password"
                 />
                 <button 
-                    disabled={status === 'submitting'}
+                    disabled={navigation.state === 'submitting'}
                 >
-                    {status === 'submitting' ? "Logging in..." : "Log in"}
+                    {navigation.state === 'submitting' ? "Logging in..." : "Log in"}
                 </button>
             </Form>
         </div>
