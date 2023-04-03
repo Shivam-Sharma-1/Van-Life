@@ -1,13 +1,22 @@
 import { useState } from "react"
-import { useLoaderData, useNavigate } from "react-router-dom"
+import { Form, useLoaderData, useNavigate } from "react-router-dom"
 import { loginUser } from "../api"
 
 function loader({ request }) {
     return new URL(request.url).searchParams.get('message')
 }
 
+async function action({ request }) {
+    const formData = await request.formData()
+    const email = formData.get('email')
+    const password = formData.get('password')
+    const data = await loginUser({ email, password })
+    console.log(data);
+
+    return null
+}
+
 function Login() {
-    const [loginFormData, setLoginFormatData] = useState({email: '', password:''})
     const [status, setStatus] = useState('idle')
     const [error, setError] = useState(null)
     const message = useLoaderData()
@@ -25,43 +34,31 @@ function Login() {
             .finally(() => setStatus('idle'))
     }
 
-    function handleChange(e) {
-        const { name, value } = e.target
-        setLoginFormatData(prev => ({
-            ...prev,
-            [name]: value
-        }))
-    }
-
     return (
         <div className="login-container">
             <h1>Sign in to your account</h1>
             {message && <h3 className="red">{message}</h3>}
             {error && <h3 className="red">{error.message}</h3>}
-            <form onSubmit={handleSubmit} className="login-form">
+            <Form method='post' className="login-form">
                 <input
                     name="email"
-                    onChange={handleChange}
                     type="email"
                     placeholder="Email address"
-                    value={loginFormData.email}
                 />
                 <input
                     name="password"
-                    onChange={handleChange}
                     type="password"
                     placeholder="Password"
-                    value={loginFormData.password}
                 />
                 <button 
                     disabled={status === 'submitting'}
                 >
                     {status === 'submitting' ? "Logging in..." : "Log in"}
                 </button>
-            </form>
+            </Form>
         </div>
     )
 }
 
 export default Login
-export {loader}
+export {loader, action}

@@ -18,7 +18,7 @@ import Vans, { loader as vansLoader } from './pages/Vans/Vans'
 import './server'
 import NotFound from './pages/NotFound'
 import Error from './components/Error'
-import Login, {loader as loginLoader} from './pages/Login'
+import Login, {action as loginAction, loader as loginLoader} from './pages/Login'
 import {requiredAuth} from './utils'
 
 function App() {
@@ -30,6 +30,7 @@ function App() {
                 path='login' 
                 element={<Login/>}
                 loader={loginLoader}
+                action={loginAction}
             />
             <Route 
                 path='vans' 
