@@ -9,10 +9,12 @@ async function action({ request }) {
     const formData = await request.formData()
     const email = formData.get('email')
     const password = formData.get('password')
+    const pathname = new URL(request.url).searchParams.get('redirectTo') || '/host'
+
     try {
         const data = await loginUser({ email, password })
         localStorage.setItem('loggedIn', true)
-        return redirect('/host')
+        return redirect(pathname)
     }
     catch(err) {
         return err.message
@@ -23,7 +25,6 @@ function Login() {
     const message = useLoaderData()
     const errorMessage = useActionData()
     const navigation = useNavigation()
-    console.log(navigation);
 
     return (
         <div className="login-container">

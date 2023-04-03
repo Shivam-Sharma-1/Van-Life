@@ -1,7 +1,9 @@
 import { Link, NavLink, Outlet, useLoaderData, useParams } from "react-router-dom"
 import { getHostVans } from "../../api"
+import { requiredAuth } from "../../utils"
 
-function loader({params}) {
+async function loader({params, request}) {
+    await requiredAuth(request)
     return getHostVans(params.id)
 }
 
@@ -12,7 +14,8 @@ function HostVanDetail() {
         color: '#161616',
     }
     
-    const vans = useLoaderData()
+    var vans = useLoaderData()
+    vans = vans[0]
 
     return (
         <section className="van-detail-container">
@@ -58,7 +61,7 @@ function HostVanDetail() {
                         Photos
                     </NavLink>
                 </nav>
-                <Outlet context={[vans, setVans]}/>
+                <Outlet context={vans}/>
             </div>
         </section>
     )

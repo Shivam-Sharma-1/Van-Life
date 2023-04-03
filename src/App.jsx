@@ -42,31 +42,31 @@ function App() {
             loader={vanDetailLoader}
             />
             <Route path='host' element={<HostLayout/>}
-            loader={async () => await requiredAuth()}
+            loader={async ({request}) => await requiredAuth(request)}
             >
                 <Route index element={<Dashboard/>}
-                loader={async () => await requiredAuth()}
+                loader={async ({request}) => await requiredAuth(request)}
                 />
                 <Route path='income' element={<Income/>}
-                loader={async () => await requiredAuth()}
+                loader={async ({request}) => await requiredAuth(request)}
                 />
                 <Route path='vans' element={<HostVans/>}
                 loader={hostVansLoader}
                 />
                 <Route path='reviews' element={<Reviews/>}
-                loader={async () => await requiredAuth()}
+                loader={async ({request}) => await requiredAuth(request)}
                 />
                 <Route path='vans/:id' element={<HostVanDetail/>}
                 loader={hostVanDetailLoader}
                 >
                     <Route index element={<HostVanInfo/>}
-                    loader={async () => await requiredAuth()}
+                    loader={async ({request}) => await requiredAuth(request)}
                     />
                     <Route path='pricing' element={<HostVanPricing/>}
-                    loader={async () => await requiredAuth()}
+                    loader={async ({request}) => await requiredAuth(request)}
                     />
                     <Route path='photos' element={<HostVanPhotos/>}
-                    loader={async () => await requiredAuth()}
+                    loader={async({request}) => await requiredAuth(request)}
                     />                           
                 </Route>
             </Route>
