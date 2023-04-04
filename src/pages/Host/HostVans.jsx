@@ -30,25 +30,25 @@ function HostVans() {
             )
         })
         return (
-            <section className="host-vans">
-                <h1 className="host-vans-title">Your listed vans</h1>
-                <div className="host-vans-list">
-                    <section>
-                        {hostVansEle}
-                    </section>
-                </div>
-            </section>
+            <div className="host-vans-list">
+                <section>
+                    {hostVansEle}
+                </section>
+            </div>
         )
     } 
 
     
 
     return (
-        <Suspense fallback={<h2>Loading...</h2>}>
-            <Await resolve={dataPromise.vans}>
-                {renderHostVansElements}
-            </Await>
-        </Suspense>
+        <section className="host-vans">
+                <h1 className="host-vans-title">Your listed vans</h1>
+                <Suspense fallback={<h2>Loading...</h2>}>
+                    <Await resolve={dataPromise.vans}>
+                        {renderHostVansElements}
+                    </Await>
+                </Suspense>
+            </section>
     )
 }
 
