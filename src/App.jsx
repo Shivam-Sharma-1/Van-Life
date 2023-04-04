@@ -20,6 +20,7 @@ import NotFound from './pages/NotFound'
 import Error from './components/Error'
 import Login, {action as loginAction, loader as loginLoader} from './pages/Login'
 import {requiredAuth} from './utils'
+import { Suspense } from 'react'
 
 function App() {
     const router = createBrowserRouter(createRoutesFromElements(
