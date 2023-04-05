@@ -1,11 +1,13 @@
 //npm install --save-dev miragejs
+//npm install react-icons --save
 
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import HostLayout from './components/HostLayout'
 import Layout from './components/Layout'
 import About from './pages/About'
 import Home from './pages/Home'
-import Dashboard from './pages/Host/Dashboard'
+import Dashboard, { loader as dashboardLoader
+} from './pages/Host/Dashboard'
 import HostVanDetail, { loader as hostVanDetailLoader } from './pages/Host/HostVanDetail'
 import HostVanInfo from './pages/Host/HostVanInfo'
 import HostVanPhotos from './pages/Host/HostVanPhotos'
@@ -20,7 +22,6 @@ import NotFound from './pages/NotFound'
 import Error from './components/Error'
 import Login, {action as loginAction, loader as loginLoader} from './pages/Login'
 import {requiredAuth} from './utils'
-import { Suspense } from 'react'
 
 function App() {
     const router = createBrowserRouter(createRoutesFromElements(
@@ -51,8 +52,11 @@ function App() {
                 errorElement={<Error/>}
                 loader={async ({request}) => await requiredAuth(request)}
             >
-                <Route index element={<Dashboard/>}
-                loader={async ({request}) => await requiredAuth(request)}
+                <Route 
+                    index 
+                    element={<Dashboard/>}
+                    loader={dashboardLoader}
+                    errorElement={<Error/>}
                 />
                 <Route path='income' element={<Income/>}
                 loader={async ({request}) => await requiredAuth(request)}

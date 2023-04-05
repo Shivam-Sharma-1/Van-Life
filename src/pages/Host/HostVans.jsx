@@ -4,7 +4,7 @@ import { requiredAuth } from "../../utils";
 import { Suspense } from "react";
 
 async function loader({request}) {
-    requiredAuth(request)
+    await requiredAuth(request)
     return defer({ vans: getHostVans()})
 }
 
