@@ -544,7 +544,7 @@ footer {
 .host-dashboard-earnings > .info > h1 {
     font-size: 36px;
     color: #161616;
-    margin: 0;
+    margin-bottom: .4em;
 }
 
 .host-dashboard-earnings > .info > p {

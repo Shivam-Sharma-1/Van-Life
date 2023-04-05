@@ -44,8 +44,8 @@ function Dashboard() {
             <section className='host-dashboard-earnings'>
                 <div className='info'>
                     <h1>Welcome!</h1>
-                    <p>income last <span>30 days</span></p>
-                    <h2>$2,280</h2>
+                    <p>Income in last <span>30 days</span></p>
+                    <h2>$2,260</h2>
                 </div>
                 <Link to='income' className='host-dashboard-link'>Details</Link>
             </section>
