@@ -1,5 +1,6 @@
 //npm install --save-dev miragejs
 //npm install react-icons --save
+//npm install firebase
 
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import HostLayout from './components/HostLayout'
