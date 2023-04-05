@@ -1,15 +1,14 @@
 import { Await, Link, defer, useLoaderData, useLocation } from "react-router-dom"
-import { getVans } from "../../api"
+import { getVan } from "../../api"
 import { Suspense } from "react"
 
 function loader({ params }) {
-    return defer({ van: getVans(params.id) }) 
+    return defer({ van: getVan(params.id) }) 
 }
 
 function VanDetail() {
     const location = useLocation()
     const dataPromise = useLoaderData()
-    console.log(dataPromise.van);
     
     const search = location.state.search ? location.state.search : ''
     const type = location.state.type ? location.state.type : "all"

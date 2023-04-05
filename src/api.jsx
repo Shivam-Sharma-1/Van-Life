@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { collection, getDocs, getFirestore } from "firebase/firestore/lite";
+import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore/lite";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,12 +22,21 @@ const vansCollectionRef = collection(db, "vans")
 
 async function getVans() {
     const querySnapshot = await getDocs(vansCollectionRef)
+    console.log(querySnapshot);
     const dataArr = querySnapshot.docs.map(doc => ({
         ...doc.data(),
         id: doc.id
     }))
-    console.log(dataArr);
     return dataArr
+}
+
+async function getVan(id) {
+    const docRef = doc(db, 'vans', id)
+    const vanSnapshot = await getDoc(docRef)
+    return {
+        ...vanSnapshot.data(),
+        id: vanSnapshot.id
+    }
 }
 
 // async function getVans(id) {
@@ -76,4 +85,4 @@ async function loginUser(creds) {
     return data
 }
 
-export { getVans, getHostVans, loginUser }
+export { getVans, getVan, getHostVans, loginUser }
