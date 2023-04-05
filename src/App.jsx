@@ -39,11 +39,17 @@ function App() {
                 loader={vansLoader}
                 errorElement={<Error/>}
             />
-            <Route path='vans/:id' element={<VanDetail/>}
-            loader={vanDetailLoader}
+            <Route 
+                path='vans/:id' 
+                element={<VanDetail/>}
+                loader={vanDetailLoader}
+                errorElement={<Error/>}
             />
-            <Route path='host' element={<HostLayout/>}
-            loader={async ({request}) => await requiredAuth(request)}
+            <Route 
+                path='host' 
+                element={<HostLayout/>}
+                errorElement={<Error/>}
+                loader={async ({request}) => await requiredAuth(request)}
             >
                 <Route index element={<Dashboard/>}
                 loader={async ({request}) => await requiredAuth(request)}
@@ -51,14 +57,20 @@ function App() {
                 <Route path='income' element={<Income/>}
                 loader={async ({request}) => await requiredAuth(request)}
                 />
-                <Route path='vans' element={<HostVans/>}
-                loader={hostVansLoader}
+                <Route 
+                    path='vans' 
+                    element={<HostVans/>}
+                    loader={hostVansLoader}
+                    errorElement={<Error/>}
                 />
                 <Route path='reviews' element={<Reviews/>}
                 loader={async ({request}) => await requiredAuth(request)}
                 />
-                <Route path='vans/:id' element={<HostVanDetail/>}
-                loader={hostVanDetailLoader}
+                <Route 
+                    path='vans/:id' 
+                    element={<HostVanDetail/>}
+                    errorElement={<Error/>}
+                    loader={hostVanDetailLoader}
                 >
                     <Route index element={<HostVanInfo/>}
                     loader={async ({request}) => await requiredAuth(request)}
