@@ -38,8 +38,6 @@ function HostVans() {
         )
     } 
 
-    
-
     return (
         <section className="host-vans">
                 <h1 className="host-vans-title">Your listed vans</h1>
