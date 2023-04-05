@@ -47,7 +47,7 @@ function Dashboard() {
                     <p>income last <span>30 days</span></p>
                     <h2>$2,280</h2>
                 </div>
-                <Link to='income'>Details</Link>
+                <Link to='income' className='host-dashboard-link'>Details</Link>
             </section>
             <section className='host-dashboard-reviews'>
                 <h2>Review score</h2>
@@ -55,12 +55,12 @@ function Dashboard() {
                 <p>
                     <span>5.0</span>/5
                 </p>
-                <Link to='reviews'>Details</Link>
+                <Link to='reviews' className='host-dashboard-link'>Details</Link>
             </section>
             <section className='host-dashboard-vans'>
                 <div className='top'>
                     <h2>Your listed vans</h2>
-                    <Link to='vans'>View all</Link>
+                    <Link to='vans' className='host-dashboard-link'>View all</Link>
                 </div>
                 <Suspense fallback={<h2>Loading...</h2>}>
                     <Await resolve={dataPromise.vans}>
