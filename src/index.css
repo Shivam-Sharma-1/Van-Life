@@ -388,19 +388,19 @@ footer {
     align-items: center;
 }
 
-.host-van-detail > img {
+.host-van-detail>img {
     height: 160px;
     border-radius: 5px;
     margin-right: 1.2em;
 }
 
-.host-van-detail-info-text > h3 {
+.host-van-detail-info-text>h3 {
     margin-top: .8em;
     font-size: 26px;
     font-weight: 700;
 }
 
-.host-van-detail-info-text > h4 {
+.host-van-detail-info-text>h4 {
     font-size: 20px;
 }
 
@@ -430,13 +430,14 @@ footer {
     font-weight: 700;
 }
 
-.host-van-detail-info > h4 {
+.host-van-detail-info>h4 {
     font-weight: 700;
     font-size: 14px;
     line-height: 21px;
     margin-bottom: .3em;
 }
-.host-van-detail-info > h4 > span {
+
+.host-van-detail-info>h4>span {
     font-weight: 500;
 }
 
@@ -445,7 +446,7 @@ footer {
     font-weight: 500;
 }
 
-.host-van-price > span {
+.host-van-price>span {
     font-size: 16px;
     color: #4D4D4D;
 }
@@ -489,11 +490,11 @@ footer {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 500px;    
+    max-width: 500px;
     margin-block: 1em;
 }
 
-.login-form > input {
+.login-form>input {
     border: 1px solid rgba(209, 213, 219);
     height: 40px;
     text-indent: 10px;
@@ -504,11 +505,11 @@ footer {
     border-radius: 5px;
 }
 
-.login-form > input:focus {
+.login-form>input:focus {
     outline: none;
 }
 
-.login-form > button {
+.login-form>button {
     background-color: #FF8C38;
     border: none;
     border-radius: 6px;
@@ -523,7 +524,7 @@ footer {
     box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.05);
 }
 
-.login-form > button:disabled {
+.login-form>button:disabled {
     background-color: #aaaaaa;
     cursor: not-allowed;
 }
@@ -541,22 +542,22 @@ footer {
     align-items: center;
 }
 
-.host-dashboard-earnings > .info > h1 {
+.host-dashboard-earnings>.info>h1 {
     font-size: 36px;
     color: #161616;
     margin-bottom: .4em;
 }
 
-.host-dashboard-earnings > .info > p {
+.host-dashboard-earnings>.info>p {
     color: #4d4d4d;
 }
 
-.host-dashboard-earnings > .info > p > span {
+.host-dashboard-earnings>.info>p>span {
     text-decoration: underline;
     font-weight: bold;
 }
 
-.host-dashboard-earnings > .info > h2 {
+.host-dashboard-earnings>.info>h2 {
     margin: 0;
     font-size: 38px;
     color: #161616;
@@ -570,7 +571,7 @@ footer {
     align-items: center;
 }
 
-.host-dashboard-reviews > h2 {
+.host-dashboard-reviews>h2 {
     margin: 0;
 }
 
@@ -587,7 +588,7 @@ footer {
     margin-right: auto;
 }
 
-.host-dashboard-reviews p > span {
+.host-dashboard-reviews p>span {
     font-weight: bold;
     color: #161616;
 }
@@ -596,7 +597,7 @@ footer {
     padding: 2.2em 1.5em;
 }
 
-.host-dashboard-vans > .top {
+.host-dashboard-vans>.top {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -621,17 +622,17 @@ footer {
     font-size: 2.5rem;
 }
 
-.host-income > p {
+.host-income>p {
     color: #4d4d4d;
     margin-block: .5em;
 }
 
-.host-income > p span {
+.host-income>p span {
     text-decoration: underline;
     font-weight: bold;
 }
 
-.host-income > h2 {
+.host-income>h2 {
     font-size: 38px;
     color: #161616;
     font-weight: 900;
@@ -643,17 +644,17 @@ img.graph {
     margin-top: 1em;
 }
 
-.host-income .info-header > p {
+.host-income .info-header>p {
     color: #4d4d4d;
     margin-top: .8em;
 }
 
-.host-income .info-header > p span {
+.host-income .info-header>p span {
     text-decoration: underline;
     font-weight: bold;
 }
 
-.host-income .info-header > h3 {
+.host-income .info-header>h3 {
     font-weight: 700;
     font-size: 1.8rem;
     margin-top: 1.5em;
@@ -669,12 +670,12 @@ img.graph {
     border-radius: 6px;
 }
 
-.host-income .transaction > h3 {
+.host-income .transaction>h3 {
     font-size: 36px;
     font-weight: 600;
 }
 
-.host-income .transaction > p {
+.host-income .transaction>p {
     font-weight: 500;
     font-size: 20px;
     color: #4d4d4d;
@@ -693,23 +694,23 @@ img.graph {
     margin-top: 1em;
 }
 
-.host-reviews .top-text > h2 {
+.host-reviews .top-text>h2 {
     font-weight: 700;
     font-size: 32px;
     margin-bottom: .3em;
 }
 
-.host-reviews .top-text > p {
+.host-reviews .top-text>p {
     margin-left: 5px;
     color: #4d4d4d;
 }
 
-.host-reviews .top-text > p span {
+.host-reviews .top-text>p span {
     text-decoration: underline;
     font-weight: bold;
 }
 
-.host-reviews > img {
+.host-reviews>img {
     margin-bottom: 2em;
 }
 
@@ -741,4 +742,141 @@ img.graph {
 .host-reviews .review-star {
     color: #ff8c38;
     margin-right: 5px;
+}
+
+.spinner {
+    font-size: 28px;
+    position: relative;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
+.spinner.center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.spinner .spinner-blade {
+    position: absolute;
+    left: 0.4629em;
+    bottom: 0;
+    width: 0.074em;
+    height: 0.2777em;
+    border-radius: 0.0555em;
+    background-color: transparent;
+    -webkit-transform-origin: center -0.2222em;
+    -ms-transform-origin: center -0.2222em;
+    transform-origin: center -0.2222em;
+    animation: spinner-fade9234 1s infinite linear;
+}
+
+.spinner .spinner-blade:nth-child(1) {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.spinner .spinner-blade:nth-child(2) {
+    -webkit-animation-delay: 0.083s;
+    animation-delay: 0.083s;
+    -webkit-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+.spinner .spinner-blade:nth-child(3) {
+    -webkit-animation-delay: 0.166s;
+    animation-delay: 0.166s;
+    -webkit-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    transform: rotate(60deg);
+}
+
+.spinner .spinner-blade:nth-child(4) {
+    -webkit-animation-delay: 0.249s;
+    animation-delay: 0.249s;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.spinner .spinner-blade:nth-child(5) {
+    -webkit-animation-delay: 0.332s;
+    animation-delay: 0.332s;
+    -webkit-transform: rotate(120deg);
+    -ms-transform: rotate(120deg);
+    transform: rotate(120deg);
+}
+
+.spinner .spinner-blade:nth-child(6) {
+    -webkit-animation-delay: 0.415s;
+    animation-delay: 0.415s;
+    -webkit-transform: rotate(150deg);
+    -ms-transform: rotate(150deg);
+    transform: rotate(150deg);
+}
+
+.spinner .spinner-blade:nth-child(7) {
+    -webkit-animation-delay: 0.498s;
+    animation-delay: 0.498s;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.spinner .spinner-blade:nth-child(8) {
+    -webkit-animation-delay: 0.581s;
+    animation-delay: 0.581s;
+    -webkit-transform: rotate(210deg);
+    -ms-transform: rotate(210deg);
+    transform: rotate(210deg);
+}
+
+.spinner .spinner-blade:nth-child(9) {
+    -webkit-animation-delay: 0.664s;
+    animation-delay: 0.664s;
+    -webkit-transform: rotate(240deg);
+    -ms-transform: rotate(240deg);
+    transform: rotate(240deg);
+}
+
+.spinner .spinner-blade:nth-child(10) {
+    -webkit-animation-delay: 0.747s;
+    animation-delay: 0.747s;
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+
+.spinner .spinner-blade:nth-child(11) {
+    -webkit-animation-delay: 0.83s;
+    animation-delay: 0.83s;
+    -webkit-transform: rotate(300deg);
+    -ms-transform: rotate(300deg);
+    transform: rotate(300deg);
+}
+
+.spinner .spinner-blade:nth-child(12) {
+    -webkit-animation-delay: 0.913s;
+    animation-delay: 0.913s;
+    -webkit-transform: rotate(330deg);
+    -ms-transform: rotate(330deg);
+    transform: rotate(330deg);
+}
+
+@keyframes spinner-fade9234 {
+    0% {
+        background-color: #69717d;
+    }
+
+    100% {
+        background-color: transparent;
+    }
 }

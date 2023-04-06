@@ -62,7 +62,22 @@ function Dashboard() {
                     <h2>Your listed vans</h2>
                     <Link to='vans' className='host-dashboard-link'>View all</Link>
                 </div>
-                <Suspense fallback={<h2>Loading...</h2>}>
+                <Suspense fallback={
+                    <div className="spinner center">
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                </div>
+                }>
                     <Await resolve={dataPromise.vans}>
                         {renderHostVansElements}
                     </Await>
