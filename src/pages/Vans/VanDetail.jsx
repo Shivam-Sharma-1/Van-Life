@@ -1,6 +1,7 @@
 import { Await, Link, defer, useLoaderData, useLocation } from "react-router-dom"
 import { getVan } from "../../api"
 import { Suspense } from "react"
+import LoadingAnimation from "../../components/LoadingAnimation"
 
 function loader({ params }) {
     return defer({ van: getVan(params.id) }) 
@@ -22,7 +23,7 @@ function VanDetail() {
             >&larr;
                 <span>Back to {type} vans</span>
             </Link>
-            <Suspense fallback={<h3>Loading...</h3>}>
+            <Suspense fallback={<LoadingAnimation/>}>
                 <Await resolve={dataPromise.van}>
                     {van => {
                         return (
