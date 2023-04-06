@@ -1,11 +1,11 @@
 import { Await, Link, NavLink, Outlet, defer, useLoaderData, useParams } from "react-router-dom"
-import { getHostVans } from "../../api"
+import { getVan } from "../../api"
 import { requiredAuth } from "../../utils"
 import { Suspense } from "react"
 
 async function loader({params, request}) {
     await requiredAuth(request)
-    return defer({ vans: getHostVans(params.id) }) 
+    return defer({ vans: getVan(params.id) }) 
 }
 
 function HostVanDetail() { 

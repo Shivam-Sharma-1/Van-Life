@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore/lite";
+import { collection, doc, getDoc, getDocs, getFirestore, query, where } from "firebase/firestore/lite";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -39,6 +39,17 @@ async function getVan(id) {
     }
 }
 
+async function getHostVans() {
+    const q = query(vansCollectionRef, where("hostId", "==", "123"))
+    const querySnapshot = await getDocs(q)
+    const dataArr = querySnapshot.docs.map(doc => ({
+        ...doc.data(),
+        id: doc.id
+    }))
+    console.log(dataArr);
+    return dataArr
+}
+
 // async function getVans(id) {
 //     const url = id ? `/api/vans/${id}` : '/api/vans'
 //     const res = await fetch(url)
@@ -54,20 +65,20 @@ async function getVan(id) {
 //     return data.vans
 // }
 
-async function getHostVans(id) {
-    const url = id ? `/api/host/vans/${id}` : '/api/host/vans'
-    const res = await fetch(url)
+// async function getHostVans(id) {
+//     const url = id ? `/api/host/vans/${id}` : '/api/host/vans'
+//     const res = await fetch(url)
 
-    if(!res.ok) {
-        throw {
-            message: "Failed to fetch vans",
-            statusText: res.statusText,
-            status: res.status,
-        }
-    }
-    const data = await res.json()
-    return data.vans
-}
+//     if(!res.ok) {
+//         throw {
+//             message: "Failed to fetch vans",
+//             statusText: res.statusText,
+//             status: res.status,
+//         }
+//     }
+//     const data = await res.json()
+//     return data.vans
+// }
 
 async function loginUser(creds) {
     const res = await fetch("/api/login",
