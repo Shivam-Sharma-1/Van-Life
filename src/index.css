@@ -749,7 +749,7 @@ img.graph {
     position: relative;
     display: inline-block;
     width: 1em;
-    height: 1em;
+    height: 50px;
 }
 
 .spinner.center {
