@@ -19,6 +19,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
 const vansCollectionRef = collection(db, "vans")
+const userCollectionRef = collection(db, 'users')
 
 async function getVans() {
     const querySnapshot = await getDocs(vansCollectionRef)
@@ -46,8 +47,19 @@ async function getHostVans() {
         ...doc.data(),
         id: doc.id
     }))
-    console.log(dataArr);
     return dataArr
+}
+
+async function loginUser(creds) {
+    const { email, password } = creds
+    const docRef = doc(db, 'users', '123')
+    const userSnapshot = await getDoc(docRef)
+    const userData = {
+        ...userSnapshot.data(),
+        id: userSnapshot.id
+    }
+    if((email != userData.email || (password != userData.password)))
+        throw new Error("No user with those credentials found!")
 }
 
 // async function getVans(id) {
@@ -80,20 +92,20 @@ async function getHostVans() {
 //     return data.vans
 // }
 
-async function loginUser(creds) {
-    const res = await fetch("/api/login",
-        {method: "post", body: JSON.stringify(creds)}
-    )
-    const data = await res.json()
+// async function loginUser(creds) {
+//     const res = await fetch("/api/login",
+//         {method: "post", body: JSON.stringify(creds)}
+//     )
+//     const data = await res.json()
     
-    if(!res.ok) {
-        throw {
-            message: data.message,
-            statusText: res.statusText,
-            status: res.status,
-        }
-    }
-    return data
-}
+//     if(!res.ok) {
+//         throw {
+//             message: data.message,
+//             statusText: res.statusText,
+//             status: res.status,
+//         }
+//     }
+//     return data
+// }
 
 export { getVans, getVan, getHostVans, loginUser }
