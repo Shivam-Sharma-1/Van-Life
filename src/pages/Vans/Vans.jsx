@@ -79,7 +79,22 @@ function Vans() {
     return (
         <div className="van-list-container">
             <h1>Explore our van options</h1>
-            <Suspense fallback={<h2>Loading</h2>}>
+            <Suspense fallback={
+                    <div className="spinner center">
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                </div>
+                }>
                 <Await resolve={dataPromise.vans}>
                     {renderVanElements}
                 </Await>
