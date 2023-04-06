@@ -58,8 +58,13 @@ async function loginUser(creds) {
         id: userSnapshot.id
     }
     if((email != userData.email || (password != userData.password)))
-        throw new Error("No user with those credentials found!")
+    throw new Error("No user with those credentials found!")
 }
+
+export { getVans, getVan, getHostVans, loginUser }
+
+
+//  CODE USED FOR AUTHENTICATION USING MIRAGE.JS
 
 // async function getVans(id) {
 //     const url = id ? `/api/vans/${id}` : '/api/vans'
@@ -106,5 +111,3 @@ async function loginUser(creds) {
 //     }
 //     return data
 // }
-
-export { getVans, getVan, getHostVans, loginUser }
