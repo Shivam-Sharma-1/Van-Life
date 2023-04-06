@@ -68,7 +68,22 @@ function HostVanDetail() {
             >&larr;
                 <span>Back to all vans</span>
             </Link>
-            <Suspense fallback={<h4>Loading...</h4>}>
+            <Suspense fallback={
+                    <div className="spinner center">
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                    <div className="spinner-blade"></div>
+                </div>
+                }>
                 <Await resolve={dataPromise.vans}>
                     {renderHostVanDetailElements}
                 </Await>
