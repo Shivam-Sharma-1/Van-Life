@@ -19,7 +19,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
 const vansCollectionRef = collection(db, "vans")
-const userCollectionRef = collection(db, 'users')
 
 async function getVans() {
     const querySnapshot = await getDocs(vansCollectionRef)
