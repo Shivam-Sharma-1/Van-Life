@@ -2,7 +2,7 @@ import { Await, Link, defer, useLoaderData } from "react-router-dom";
 import { getHostVans } from "../../api";
 import { requiredAuth } from "../../utils";
 import { Suspense } from "react";
-import LoaderAnimation from "../../components/LoaderAnimation";
+import LoadingAnimation from "../../components/LoadingAnimation";
 
 async function loader({request}) {
     await requiredAuth(request)
@@ -42,7 +42,7 @@ function HostVans() {
     return (
         <section className="host-vans">
                 <h1 className="host-vans-title">Your listed vans</h1>
-                <Suspense fallback={<LoaderAnimation/>}>
+                <Suspense fallback={<LoadingAnimation/>}>
                     <Await resolve={dataPromise.vans}>
                         {renderHostVansElements}
                     </Await>

@@ -2,7 +2,7 @@ import { Await, Link, NavLink, Outlet, defer, useLoaderData, useParams } from "r
 import { getVan } from "../../api"
 import { requiredAuth } from "../../utils"
 import { Suspense } from "react"
-import LoaderAnimation from "../../components/LoaderAnimation"
+import LoadingAnimation from "../../components/LoadingAnimation"
 
 async function loader({params, request}) {
     await requiredAuth(request)
@@ -68,7 +68,7 @@ function HostVanDetail() {
             >&larr;
                 <span>Back to all vans</span>
             </Link>
-            <Suspense fallback={<LoaderAnimation/>}>
+            <Suspense fallback={<LoadingAnimation/>}>
                 <Await resolve={dataPromise.vans}>
                     {renderHostVanDetailElements}
                 </Await>

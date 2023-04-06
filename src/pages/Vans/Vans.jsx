@@ -1,6 +1,8 @@
 import { Suspense, useState } from "react"
 import { Await, Link, defer, useLoaderData, useSearchParams } from "react-router-dom"
 import {getVans} from "../../api"
+import LoaderAnimation from "../../components/LoadingAnimation"
+import LoadingAnimation from "../../components/LoadingAnimation"
 
 function loader() {
     return defer({ vans: getVans() })   
@@ -79,22 +81,7 @@ function Vans() {
     return (
         <div className="van-list-container">
             <h1>Explore our van options</h1>
-            <Suspense fallback={
-                    <div className="spinner center">
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                </div>
-                }>
+            <Suspense fallback={<LoadingAnimation/>}>
                 <Await resolve={dataPromise.vans}>
                     {renderVanElements}
                 </Await>

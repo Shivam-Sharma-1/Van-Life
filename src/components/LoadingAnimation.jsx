@@ -1,4 +1,4 @@
-function LoaderAnimation() {
+function LoadingAnimation() {
     return ( 
         <div className="spinner center">
             <div className="spinner-blade"></div>
@@ -17,4 +17,4 @@ function LoaderAnimation() {
     )
 }
 
-export default LoaderAnimation
+export default LoadingAnimation

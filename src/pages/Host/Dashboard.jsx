@@ -3,7 +3,7 @@ import { requiredAuth } from '../../utils'
 import { getHostVans } from '../../api'
 import { BsStarFill } from 'react-icons/bs'
 import { Suspense } from 'react'
-import LoaderAnimation from '../../components/LoaderAnimation'
+import LoadingAnimation from '../../components/LoadingAnimation'
 
 async function loader({ request }) {
     await requiredAuth(request)
@@ -63,7 +63,7 @@ function Dashboard() {
                     <h2>Your listed vans</h2>
                     <Link to='vans' className='host-dashboard-link'>View all</Link>
                 </div>
-                <Suspense fallback={<LoaderAnimation/>}>
+                <Suspense fallback={<LoadingAnimation/>}>
                     <Await resolve={dataPromise.vans}>
                         {renderHostVansElements}
                     </Await>
