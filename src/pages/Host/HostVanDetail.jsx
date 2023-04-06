@@ -2,6 +2,7 @@ import { Await, Link, NavLink, Outlet, defer, useLoaderData, useParams } from "r
 import { getVan } from "../../api"
 import { requiredAuth } from "../../utils"
 import { Suspense } from "react"
+import LoaderAnimation from "../../components/LoaderAnimation"
 
 async function loader({params, request}) {
     await requiredAuth(request)
@@ -67,22 +68,7 @@ function HostVanDetail() {
             >&larr;
                 <span>Back to all vans</span>
             </Link>
-            <Suspense fallback={
-                    <div className="spinner center">
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                    <div className="spinner-blade"></div>
-                </div>
-                }>
+            <Suspense fallback={<LoaderAnimation/>}>
                 <Await resolve={dataPromise.vans}>
                     {renderHostVanDetailElements}
                 </Await>
