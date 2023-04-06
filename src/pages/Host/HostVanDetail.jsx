@@ -18,7 +18,6 @@ function HostVanDetail() {
     const dataPromise = useLoaderData()
 
     function renderHostVanDetailElements(vans) {
-        vans = vans[0]
         return (
             <div className="host-van-detail-layout-container">
                 <div className="host-van-detail">
