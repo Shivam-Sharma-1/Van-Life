@@ -1,4 +1,4 @@
-import { Await, Link, NavLink, Outlet, defer, useLoaderData, useParams } from "react-router-dom"
+import { Await, Link, NavLink, Outlet, defer, useLoaderData } from "react-router-dom"
 import { getVan } from "../../api"
 import { requiredAuth } from "../../utils"
 import { Suspense } from "react"

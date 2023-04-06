@@ -12,7 +12,7 @@ async function action({ request }) {
     const pathname = new URL(request.url).searchParams.get('redirectTo') || '/host'
 
     try {
-        const data = await loginUser({ email, password })
+        await loginUser({ email, password })
         localStorage.setItem('loggedIn', true)
         return redirect(pathname)
     }

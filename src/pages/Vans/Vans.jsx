@@ -1,7 +1,6 @@
-import { Suspense, useState } from "react"
+import { Suspense } from "react"
 import { Await, Link, defer, useLoaderData, useSearchParams } from "react-router-dom"
 import {getVans} from "../../api"
-import LoaderAnimation from "../../components/LoadingAnimation"
 import LoadingAnimation from "../../components/LoadingAnimation"
 
 function loader() {
