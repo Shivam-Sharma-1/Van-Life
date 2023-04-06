@@ -22,7 +22,6 @@ const vansCollectionRef = collection(db, "vans")
 
 async function getVans() {
     const querySnapshot = await getDocs(vansCollectionRef)
-    console.log(querySnapshot);
     const dataArr = querySnapshot.docs.map(doc => ({
         ...doc.data(),
         id: doc.id
