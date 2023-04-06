@@ -58,7 +58,7 @@ async function loginUser(creds) {
         id: userSnapshot.id
     }
     if((email != userData.email || (password != userData.password)))
-    throw new Error("No user with those credentials found!")
+        throw new Error("No user with those credentials found!")
 }
 
 export { getVans, getVan, getHostVans, loginUser }
