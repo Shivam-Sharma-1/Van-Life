@@ -23,6 +23,7 @@ body {
 }
 
 .site-wrapper {
+    width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -48,7 +49,7 @@ header a {
     text-decoration: none;
     color: #4D4D4D;
     font-weight: 600;
-    padding: 5px 20px;
+    padding: 5px 1em;
 }
 
 header a:hover {
@@ -895,4 +896,14 @@ img.graph {
     min-height: 200px;
     gap: 10px;
     color: #cc0000;
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        flex-direction: column;
+    }
+
+    header .site-logo {
+        margin-right: 0;
+    }
 }
