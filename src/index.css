@@ -322,6 +322,7 @@ footer {
 .host-nav {
     display: flex;
     flex-flow: row wrap;
+    padding-left: .8em;
 }
 
 .host-nav a {
