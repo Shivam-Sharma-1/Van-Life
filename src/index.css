@@ -55,10 +55,12 @@ header a {
 header a:hover {
     color: #161616;
     text-decoration: underline;
+    justify-content: center;
 }
 
 nav {
-    display: inline-flex;
+    display: flex;
+    flex-flow: row wrap;
     align-items: center;
 }
 
@@ -416,14 +418,6 @@ footer {
     color: #4D4D4D;
     font-weight: 500;
     padding: 5px 20px;
-}
-
-.host-van-detail-nav a:first-of-type {
-    text-decoration: none;
-    color: #4D4D4D;
-    font-weight: 500;
-    padding: 5px 15px;
-    margin-left: -15px;
 }
 
 .host-van-detail-nav a:hover {
@@ -906,5 +900,14 @@ img.graph {
 
     header .site-logo {
         margin-right: 0;
+    }
+
+    .host-van-detail {
+        flex-direction: column;
+    }
+
+    .host-van-detail>img {
+        margin-right: 0;
+        margin-bottom: 1em;
     }
 }
