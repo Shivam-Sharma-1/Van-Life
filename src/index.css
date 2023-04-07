@@ -233,6 +233,7 @@ footer {
     background-color: #FFEAD0;
     color: #4D4D4D;
     transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: .5em;
 }
 
 .van-type:hover {
@@ -325,7 +326,8 @@ footer {
     text-decoration: none;
     color: #4D4D4D;
     font-weight: 500;
-    padding: 5px 20px;
+    padding: 5px 1em;
+    flex-grow: 1;
 }
 
 .host-nav a:hover {
@@ -905,5 +907,9 @@ img.graph {
 
     header .site-logo {
         margin-right: 0;
+    }
+
+    .host-nav a {
+        padding-inline: .5em;
     }
 }
